@@ -1,0 +1,22 @@
+package: github.com/microservices-demo/user
+import:
+- package: github.com/go-kit/kit
+  subpackages:
+  - endpoint
+  - log
+  - metrics
+  - metrics/prometheus
+  - transport/http
+- package: github.com/gorilla/mux
+- package: github.com/prometheus/client_golang
+  subpackages:
+  - prometheus
+  - prometheus/promhttp
+- package: golang.org/x/net
+  subpackages:
+  - context
+- package: gopkg.in/mgo.v2
+  subpackages:
+  - bson
+- package: gopkg.in/tomb.v2
+

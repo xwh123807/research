@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "deploy_doc"
+require "deploy_doc/cli"
+
+require "optparse"
+DeployDoc::CLI.run!(ARGV)

@@ -1,0 +1,69 @@
+digraph deploy_doc_architecture {
+  edge[minlen=1.8];
+  subgraph cluster_user_provided {
+    label= "User provided";
+    fontsize=10
+    node[shape="note"];
+    base_image[label="Docker Base Image"];
+    deploy_doc[label="documentation.md",fontname="mono"];
+  };
+
+  subgraph cluster_doc {
+    label="E.g. Yekyll";
+    labeljust="r";
+    fontsize=10;
+
+    generate_doc[label="Generate\ndocumentation"];
+  }
+
+
+  subgraph cluster_deploydoc {
+    label = "DeployDoc";
+    labeljust="l";
+    fontsize=10
+    script_generator[label="deploy_doc",fontname="mono"];
+    generated_script[label="Test steps\n(JSON file)", shape=note];
+  }
+
+  subgraph cluster_container{
+    label="Within container";
+    labeljust="l";
+    fontsize=10;
+
+    run_kubectl[label="Deploy to k8s\nwith kubectl"];
+    run_terraform[label="Terraform\ninfrastructure"];
+    run_test_script[shape="circle", label="Run tests"]
+    run_test_script -> run_tests[dir=both];
+    run_test_script -> run_terraform [dir=both];
+    run_test_script -> run_kubectl[dir=both];
+
+    run_tests[label="Run sanity\ntests"];
+  }
+
+
+  script_generator -> generated_script;
+  generated_script -> run_test_script;
+
+  deploy_doc -> script_generator;
+  base_image -> run_test_script;
+  deploy_doc -> generate_doc;
+
+  doc_output[shape="note",label="Documentation"];
+  subgraph cluster_outputs {
+    style=invis;
+    node[shape=note];
+    test_output[label="Test output"];
+
+    is_test_ok[shape="diamond", label="Test passed?"];
+    test_output->is_test_ok;
+    is_test_ok -> test_bad [label="No"];
+    is_test_ok -> publish_doc[label="yes"];
+    test_bad[shape="rect", label="Fail CI build"];
+    publish_doc[shape="default", label="Publish correct docs"];
+  }
+
+  doc_output -> publish_doc;
+
+  run_test_script -> test_output;
+  generate_doc -> doc_output;
+}
