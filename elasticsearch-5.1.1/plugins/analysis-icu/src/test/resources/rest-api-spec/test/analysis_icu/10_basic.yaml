@@ -1,0 +1,52 @@
+# Integration tests for ICU analysis components
+#
+"Tokenizer":
+    - do:
+        warnings:
+          - text request parameter is deprecated and will be removed in the next major release. Please use the JSON in the request body instead request param
+          - tokenizer request parameter is deprecated and will be removed in the next major release. Please use the JSON in the request body instead request param
+        indices.analyze:
+          text:         Foo Bar
+          tokenizer:    icu_tokenizer
+    - length: { tokens: 2 }
+    - match:  { tokens.0.token: Foo }
+    - match:  { tokens.1.token: Bar }
+---
+"Normalization filter":
+    - do:
+        warnings:
+          - filter request parameter is deprecated and will be removed in the next major release. Please use the JSON in the request body instead request param
+          - text request parameter is deprecated and will be removed in the next major release. Please use the JSON in the request body instead request param
+          - tokenizer request parameter is deprecated and will be removed in the next major release. Please use the JSON in the request body instead request param
+        indices.analyze:
+          filter:      icu_normalizer
+          text:         Foo Bar Ruß
+          tokenizer:    keyword
+    - length: { tokens: 1 }
+    - match:  { tokens.0.token: foo bar russ }
+---
+"Normalization charfilter":
+    - do:
+        warnings:
+          - char_filter request parameter is deprecated and will be removed in the next major release. Please use the JSON in the request body instead request param
+          - text request parameter is deprecated and will be removed in the next major release. Please use the JSON in the request body instead request param
+          - tokenizer request parameter is deprecated and will be removed in the next major release. Please use the JSON in the request body instead request param
+        indices.analyze:
+          char_filter: icu_normalizer
+          text:         Foo Bar Ruß
+          tokenizer:    keyword
+    - length: { tokens: 1 }
+    - match:  { tokens.0.token: foo bar russ }
+---
+"Folding filter":
+    - do:
+        warnings:
+          - filter request parameter is deprecated and will be removed in the next major release. Please use the JSON in the request body instead request param
+          - text request parameter is deprecated and will be removed in the next major release. Please use the JSON in the request body instead request param
+          - tokenizer request parameter is deprecated and will be removed in the next major release. Please use the JSON in the request body instead request param
+        indices.analyze:
+          filter:      icu_folding
+          text:         Foo Bar résumé
+          tokenizer:    keyword
+    - length: { tokens: 1 }
+    - match:  { tokens.0.token: foo bar resume }
