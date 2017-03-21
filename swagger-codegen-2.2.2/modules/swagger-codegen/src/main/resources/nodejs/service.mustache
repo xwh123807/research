@@ -1,0 +1,42 @@
+'use strict';
+
+{{#operations}}
+{{#operation}}
+exports.{{{operationId}}} = function(args, res, next) {
+  /**
+   {{#summary}}
+   * {{{summary}}}
+   {{/summary}}
+   {{#notes}}
+   * {{{notes}}}
+   {{/notes}}
+   *
+  {{#allParams}}
+   * {{paramName}} {{{dataType}}} {{{description}}}{{^required}} (optional){{/required}}
+  {{/allParams}}
+  {{^returnType}}
+   * no response value expected for this operation
+  {{/returnType}}
+  {{#returnType}}
+   * returns {{{returnType}}}
+  {{/returnType}}
+   **/
+  {{#returnType}}
+  var examples = {};
+  {{#examples}}
+  examples['{{contentType}}'] = {{{example}}};
+  {{/examples}}
+  if (Object.keys(examples).length > 0) {
+    res.setHeader('Content-Type', 'application/json');
+    res.end(JSON.stringify(examples[Object.keys(examples)[0]] || {}, null, 2));
+  } else {
+    res.end();
+  }
+  {{/returnType}}
+  {{^returnType}}
+  res.end();
+  {{/returnType}}
+}
+
+{{/operation}}
+{{/operations}}
