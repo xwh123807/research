@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><checkstyle-configurations file-format-version="5.0.0">
+<check-configuration name="Camel Checks" location="/Users/xiangwanhong/git/research/camel-checkstyle.xml" type="external" description="">
+<property name="apache.header.file" value="/Users/xiangwanhong/git/research/camel-header.txt"/>
+</check-configuration>
+</checkstyle-configurations>
