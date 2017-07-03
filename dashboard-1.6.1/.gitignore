@@ -1,0 +1,22 @@
+## Local copies of dependencies that should stay on developers' local machines
+node_modules/
+bower_components/
+
+## Build and test artifacts
+.go_workspace/
+.sass-cache/
+.tmp/
+coverage/
+dist/
+.tools/
+
+## OS files
+# Mac OS
+.DS_Store
+
+## IDE specific files
+# IntelliJ
+.idea/
+*.iml
+# Vi temporary files
+*.swp
