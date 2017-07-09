@@ -10,6 +10,7 @@ const _ = require('./utils/underscore');
 const defaultConfig = {
     mode: 'mist',
     production: false,
+    rpc: 'http://ethereum.ygcloud.com:8545'
 };
 try {
     _.extend(defaultConfig, require('../config.json'));
