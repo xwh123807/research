@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< HEAD
   <component name="GOROOT" path="/usr/local/Cellar/go/1.8.3/libexec" />
+=======
+  <component name="GOROOT" path="/usr/local/go" />
+>>>>>>> c776ba78b4b5a473ca6d8187dce5c64308363caf
 </project>

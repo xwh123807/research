@@ -4,6 +4,10 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/.tmp" />
       <excludeFolder url="file://$MODULE_DIR$/interface/.meteor/local" />
+<<<<<<< HEAD
+=======
+      <excludeFolder url="file://$MODULE_DIR$/interface/.meteor/platforms" />
+>>>>>>> c776ba78b4b5a473ca6d8187dce5c64308363caf
       <excludeFolder url="file://$MODULE_DIR$/temp" />
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
     </content>

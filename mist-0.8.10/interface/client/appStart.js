@@ -8,7 +8,7 @@ mistInit = function () {
 
     EthBlocks.init();
 
-    Tabs.onceSynced.then(function () {
+    //Tabs.onceSynced.then(function () {
         if (location.search.indexOf('reset-tabs') >= 0) {
             console.info('Resetting UI tabs');
 
@@ -53,7 +53,7 @@ mistInit = function () {
         if (!LocalStore.get('selectedTab') || !Tabs.findOne(LocalStore.get('selectedTab'))) {
             LocalStore.set('selectedTab', 'wallet');
         }
-    });
+    //});
 };
 
 

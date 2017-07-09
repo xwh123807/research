@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/go-ethereum.iml" filepath="$PROJECT_DIR$/.idea/go-ethereum.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/go-ethereum-1.6.6.iml" filepath="$PROJECT_DIR$/.idea/go-ethereum-1.6.6.iml" />
+>>>>>>> c776ba78b4b5a473ca6d8187dce5c64308363caf
     </modules>
   </component>
 </project>
