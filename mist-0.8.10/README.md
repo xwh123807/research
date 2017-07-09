@@ -64,7 +64,7 @@ To update Mist in the future, run:
 For development we start the interface with a Meteor server for autoreload etc.
 *Start the interface in a separate terminal window:*
 
-    $ cd mist/interface && meteor --no-release-check
+    $ cd interface && meteor --no-release-check
 
 In the original window you can then start Mist with:
 
