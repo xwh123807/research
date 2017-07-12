@@ -1,0 +1,75 @@
+<div id="package">
+  <h1>
+    <%= package.name %>
+    <small>
+    (<a href="/sync/<%= package.name %>" target="_blank">SYNC</a> again from source npm registry)
+    </small>
+  </h1>
+
+  <p class="description">This package has been unpublished.</p>
+  <!-- package.json? -->
+  <ul class="ant-menu ant-menu-horizontal ant-menu-root unstyled mb15">
+    <li class="ant-menu-item-selected ant-menu-item unstyled">
+      <span>package.json</span>
+    </li>
+  </ul>
+
+  <div class="ant-table">
+    <table class="metadata active">
+      <% if (package.unpublished.description) { %>
+      <tr>
+        <th>Description</th>
+        <td>
+          <%= package.unpublished.description %>
+        </td>
+      </tr>
+      <% } %>
+
+      <tr>
+        <th>Unpublished By</th>
+        <td>
+          <span class="user">
+            <a class="username" href="/~<%= package.unpublished.name %>">
+              <%= package.unpublished.name %>
+            </a>
+          </span>
+        </td>
+      </tr>
+
+      <tr>
+        <th>Unpublished On</th>
+        <td>
+          <%= package.unpublished.time %>
+        </td>
+      </tr>
+
+      <% if (package.unpublished.maintainers) { %>
+      <tr>
+        <th>Maintainers</th>
+        <td>
+        <% package.unpublished.maintainers.forEach(function (m) { %>
+          <span class="user">
+            <a class="username" href="/~<%= m.name %>">
+              <% if (m.gravatar) { %>
+              <img src="<%= m.gravatar %>" class="avatar">
+              <% } %>
+              <%= m.name %>
+            </a>
+          </span>
+        <% }) %>
+        </td>
+      </tr>
+      <% } %>
+
+      <% if (package.unpublished.versions) { %>
+      <tr>
+          <th>Versions (<%= package.unpublished.versions.length %>)</th>
+        <td>
+        <%= package.unpublished.versions.reverse().slice(0, 20).join(', ') %> ...
+        </td>
+      </tr>
+      <% } %>
+
+    </table>
+  </div>
+</div>

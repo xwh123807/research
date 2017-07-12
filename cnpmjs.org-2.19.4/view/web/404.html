@@ -1,0 +1,13 @@
+<% if (name) { %>
+<div class="alert alert-warning">
+  Can not found package match <%= name %>. You can
+  <a href="/sync/<%= name %>" target="_blank">SYNC</a> from official npm registry or
+  <a href="https://npmjs.org/search?q=<%= name %>" target="_blank">SEARCH</a> in official npm website.
+</div>
+<% } else { %>
+<div class="row">
+  <div class="col-lg-8 col-lg-offset-2 text-center">
+    <h1>OPPS, Error 404 !</h1>
+  </div>
+</div>
+<% } %>

@@ -1,0 +1,61 @@
+<div id="search" class="row">
+  <% if (!packages.length) { %>
+    <div class="ant-alert ant-alert-warn">
+      Can not found package match <%= keyword %>. You can
+      <a href="/sync/<%= keyword %>" target="_blank">SYNC</a> from official npm registry or
+      <a href="https://npmjs.org/search?q=<%= keyword %>" target="_blank">SEARCH</a> in official npm website.
+    </div>
+  <% } else if (!match) { %>
+    <div class="ant-alert ant-alert-info">
+      Can not found package <%= keyword %>. You can
+      <a href="/sync/<%= keyword %>" target="_blank">SYNC</a> from official npm registry or
+      <a href="https://npmjs.org/search?q=<%= keyword %>" target="_blank">SEARCH</a> in official npm website.
+    </div>
+  <% } %>
+  <div class="col-12">
+
+  <% if (packages.length) { %>
+    <h2>
+      Packages match "<span style="color: #09f;"><%= keyword %></span>"
+    </h2>
+    <% if (match) { %>
+      <ul>
+        <li class="package match">
+          <a href="/package/<%= match.name %>" class="package-name"><%= match.name %></a>
+          <span class="package-description"><%= match.description %></span>
+        </li>
+      </ul>
+    <% } %>
+    <% for (var i = 0; i < packages.length; i++) {
+      var item = packages[i];
+      if (item.name === keyword) {
+        continue;
+      }
+    %>
+    <ul>
+      <li class="package">
+        <a href="/package/<%= item.name %>" class="package-name"><%= item.name %></a>
+        <span class="package-description"><%= item.description %></span>
+      </li>
+    </ul>
+    <% } %>
+  <% } %>
+  </div>
+  <div class="col-12">
+  <% if (keywords.length) { %>
+    <h2>
+      Keywords match "<span style="color: #09f;"><%= keyword %></span>"
+    </h2>
+    <% for (var i = 0; i < keywords.length; i++) {
+      var item = keywords[i];
+    %>
+    <ul>
+      <li class="package <%= item.name === keyword ? 'match' : '' %>">
+        <a href="/package/<%= item.name %>" class="package-name"><%= item.name %></a>
+        <span class="package-description"><%= item.description %></span>
+      </li>
+    </ul>
+    <% } %>
+  <% } %>
+  </div>
+</div>
