@@ -9,7 +9,7 @@ services:
 
   ca:
     container_name: ca
-    image: hyperledger/fabric-ca
+    image: hyperledger/fabric-ca:x86_64-1.0.2
     dns_search: .
     environment:
       - FABRIC_CA_SERVER_TLS_ENABLED=${TLS_ENABLED}
@@ -23,7 +23,7 @@ services:
 
   tlsca:
     container_name: tlsca
-    image: hyperledger/fabric-ca
+    image: hyperledger/fabric-ca:x86_64-1.0.2
     dns_search: .
     environment:
       - FABRIC_CA_SERVER_TLS_ENABLED=${TLS_ENABLED}
@@ -34,7 +34,7 @@ services:
 
   orderer:
     container_name: orderer
-    image: hyperledger/fabric-orderer
+    image: hyperledger/fabric-orderer:x86_64-1.0.2
     dns_search: .
     environment:
       - ORDERER_GENERAL_TLS_ENABLED=${TLS_ENABLED}
@@ -117,7 +117,7 @@ services:
       - peer1
 
   cli:
-    image: hyperledger/fabric-peer
+    image: hyperledger/fabric-peer:x86_64-1.0.2
     dns_search: .
     environment:
       - CORE_PEER_TLS_ENABLED=${TLS_ENABLED}
