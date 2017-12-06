@@ -9,7 +9,7 @@ services:
     image: hyperledger/fabric-peer:x86_64-1.0.2
     dns_search: .
     environment:
-      - CORE_PEER_TLS_ENABLED=${TLS_ENABLED}
+      - CORE_PEER_TLS_ENABLED=false
       - CORE_LOGGING_LEVEL=WARNING
       - CORE_NEXT=true
       - CORE_PEER_GOSSIP_BOOTSTRAP=peer1:7051
