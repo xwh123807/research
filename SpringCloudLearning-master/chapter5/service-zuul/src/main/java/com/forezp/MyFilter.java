@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * Created by forezp on 2017/4/8.
  */
-@Component
+//@Component
 public class MyFilter extends ZuulFilter{
 
     private static Logger log = LoggerFactory.getLogger(MyFilter.class);
