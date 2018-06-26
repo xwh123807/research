@@ -1,0 +1,20 @@
+﻿"name","x","y","color"
+"Needs Analysis",10,200,"red"
+"Needs Analysis",20,100,
+"Needs Analysis",30,300,
+"Needs Analysis",40,200,
+"Needs Analysis",50,200,
+"Needs Analysis",60,250,
+"Needs Analysis",70,150,
+"Needs Analysis",80,200,
+"Prospecting",0,0,
+"Prospecting",20,50,
+"Prospecting",40,110,
+"Prospecting",60,180,
+"Prospecting",80,100,
+"Prospecting",100,150,
+"Qualification",10,100,"rgba(50, 255, 50, 0.8)"
+"Qualification",30,150,
+"Qualification",50,100,
+"Qualification",70,120,
+"Qualification",90,200,
