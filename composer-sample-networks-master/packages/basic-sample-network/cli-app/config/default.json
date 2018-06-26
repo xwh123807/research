@@ -1,0 +1,9 @@
+{
+
+  "cli-app" : {
+     "participantId" : "WebAppAdmin",
+     "participantPwd" :"1qaz2wsx",
+     "businessNetworkIdentifier" : "digitalproperty-network",
+     "connectionProfile" : "defaultProfile"
+  }
+}
