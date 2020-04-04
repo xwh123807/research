@@ -58,7 +58,7 @@
     "istanbul": "^0.4.5",
     "json-structure-diff": "^0.0.2",
     "merge-stream": "^1.0.0",
-    "minimist": "^1.2.0",
+    "minimist": "^1.2.3",
     "mocha": "^3.2.0",
     "optimist": "^0.6.1",
     "require-dir": "^0.3.1",
