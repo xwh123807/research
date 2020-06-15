@@ -101,7 +101,7 @@
         <wsdl4j.bundle.version>1.6.3_1</wsdl4j.bundle.version>
         <xalan.bundle.version>2.7.2_3</xalan.bundle.version>
         <xalan-serializer.bundle.version>2.7.2_1</xalan-serializer.bundle.version>
-        <xerces.version>2.11.0</xerces.version>
+        <xerces.version>2.12.0</xerces.version>
         <xml.api.version>2.11.0-20110622</xml.api.version>
 
         <cxf.codegen-plugin.version>${cxf.version}</cxf.codegen-plugin.version>
