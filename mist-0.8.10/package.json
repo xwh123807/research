@@ -45,7 +45,7 @@
     "co-mocha": "^1.2.0",
     "del": "^2.2.2",
     "ecstatic": "^2.1.0",
-    "electron": "^1.6.11",
+    "electron": "^9.4.0",
     "electron-builder": "^17.0.1",
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^11.1.3",
