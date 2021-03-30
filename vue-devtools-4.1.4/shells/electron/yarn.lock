@@ -648,7 +648,7 @@ electron-download@^3.0.1:
     semver "^5.3.0"
     sumchecker "^1.2.0"
 
-electron@^1.7.11:
+electron@1.7.11:
   version "1.7.11"
   resolved "https://registry.yarnpkg.com/electron/-/electron-1.7.11.tgz#993b6aa79e0e79a7cfcc369f4c813fbd9a0b08d9"
   dependencies:
@@ -2749,8 +2749,8 @@ xtend@~2.1.1:
     object-keys "~0.4.0"
 
 y18n@^3.2.1:
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/y18n/-/y18n-3.2.1.tgz#6d15fba884c08679c0d77e88e7759e811e07fa41"
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/y18n/-/y18n-3.2.2.tgz#85c901bd6470ce71fc4bb723ad209b70f7f28696"
 
 yallist@^2.1.2:
   version "2.1.2"
